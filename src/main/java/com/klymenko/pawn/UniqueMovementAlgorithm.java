@@ -6,7 +6,7 @@ import java.util.List;
 public class UniqueMovementAlgorithm {
 	
 	public static void findPath(Board board, GameCell currentCell) {
-		if(!board.isBoardFullyVisited() && board.shouldBeVisited(currentCell)) {
+		if(board.shouldBeVisited(currentCell)) {
 			board.visit(currentCell);
 			for(GameCell availableCell : getAvailableCells(currentCell, board)) {
 				if(board.shouldBeVisited(availableCell)) {
